@@ -5,15 +5,14 @@ using System.Globalization;
 
 Console.WriteLine("Entre com as datas no seguinte formato MM/DD/YYYY");
 DateTime referenceDate = DateTime.ParseExact(Console.ReadLine(), "MM/dd/yyyy", new CultureInfo("en-US"));
-
+Console.WriteLine();
 Console.WriteLine("Entre com o número de trades");
 int n = int.Parse(Console.ReadLine());
-
+Console.WriteLine();
 List<ITrade> trades = new List<ITrade>();
-
-Console.WriteLine("Entre com o Valor > Setor > Data do próximo pagamento e Se a pessoa é exposta ou não!");
-Console.WriteLine("Segue o exemplo > 2000000 Private 12/29/2025 false ");
-
+Console.WriteLine("Entre com o Valor > Setor > Data do próximo pagamento e Se a pessoa é exposta ou não usando True/False !");
+Console.WriteLine("Segue o exemplo > 2000000 Private 12/29/2025 False ");
+Console.WriteLine();
 for (int i = 0; i < n; i++)
 {
     var input = Console.ReadLine().Split(' ');
@@ -24,6 +23,7 @@ for (int i = 0; i < n; i++)
     bool politicallyExposed = bool.Parse(input[3]);
 
     trades.Add(new Trade(value, sector, dateNextPayment, politicallyExposed));
+    Console.WriteLine();
 }
 
 // Criação do categorizador
